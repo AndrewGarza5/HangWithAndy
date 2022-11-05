@@ -1,6 +1,5 @@
 # application
-/application/node_modules
-/application/src/secrets.json
+/app/node_modules
 
 # server
 /server/node_modules
