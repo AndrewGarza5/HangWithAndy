@@ -1,0 +1,106 @@
+.view-more-panel-container{
+    width: auto;
+    height: auto;
+    max-height: 350px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+  
+.view-more-back-button{
+    width: 240px;
+    height: 46px;
+
+    background-color: #de9d0675;
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    color: white;
+    font-family: 'HarlowSolid';
+    font-size: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 200ms ease;
+
+    cursor: pointer;
+}
+
+.view-more-my-friends{
+    width: 240px;
+    height: 71px;
+
+    background-color: var(--panel-color);
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    color: white;
+    font-family: 'Bauhaus93';
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.view-more-view-photos{
+    width: 240px;
+    height: 71px;
+
+    background-color: var(--panel-color);
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    color: white;
+    font-family: 'Bauhaus93';
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.view-more-submit-photos{
+    width: 240px;
+    height: 71px;
+
+    background-color: var(--panel-color);
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    color: white;
+    font-family: 'Bauhaus93';
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.view-more-view-past-hangouts{
+    width: 240px;
+    height: 71px;
+
+    background-color: var(--panel-color);
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    color: white;
+    font-family: 'Bauhaus93';
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

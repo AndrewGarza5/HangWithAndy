@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.600fbaf4.css",
+    "main.js": "/static/js/main.a7ba3b00.js",
+    "static/media/mePOGGING.png": "/static/media/mePOGGING.3a0904399554f312b8dc.png",
+    "static/media/3.png": "/static/media/3.f74950170dcabb985e14.png",
+    "static/media/5.png": "/static/media/5.4427367ecb7e251c8f0b.png",
+    "static/media/1.jpg": "/static/media/1.96c7540aea47e762c512.jpg",
+    "static/media/6.png": "/static/media/6.8428b05306570533a968.png",
+    "static/media/4.jpg": "/static/media/4.cffb63c86e6530e0f40a.jpg",
+    "static/media/9.jpg": "/static/media/9.e3a6adc5baa9bcb45fb4.jpg",
+    "static/media/7.jpg": "/static/media/7.a6cb1b5c5faf0f427c37.jpg",
+    "static/media/Bauhaus93.ttf": "/static/media/Bauhaus93.6d785e39c9cd2bb2f181.ttf",
+    "static/media/8.jpg": "/static/media/8.661a99ba8f57431f92df.jpg",
+    "static/media/2.jpg": "/static/media/2.68fca1402614cb8a3e35.jpg",
+    "static/media/HarlowSolid.otf": "/static/media/HarlowSolid.6f6a4ec9d0ecc6f1152a.otf",
+    "static/media/Demode.ttf": "/static/media/Demode.4bab562cce9f6349b87a.ttf",
+    "static/media/OfficialBook.ttf": "/static/media/OfficialBook.89e83860a6881618b573.ttf",
+    "static/media/Bellerose.ttf": "/static/media/Bellerose.de131ba8d1efc7a6f6c8.ttf",
+    "index.html": "/index.html",
+    "main.600fbaf4.css.map": "/static/css/main.600fbaf4.css.map",
+    "main.a7ba3b00.js.map": "/static/js/main.a7ba3b00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.600fbaf4.css",
+    "static/js/main.a7ba3b00.js"
+  ]
+}
