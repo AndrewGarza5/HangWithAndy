@@ -4,8 +4,12 @@
 # server
 /server/node_modules
 /server/.env
+/server/photos
 
 # misc 
 hangwithandy.pem
 tables.sql
 /photo_helper
+app.zip
+server.zip
+tables_execute.sql

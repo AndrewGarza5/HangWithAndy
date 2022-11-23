@@ -29,8 +29,10 @@ app.use(express.json())
 
 // routes
 const HangOutRoute = require('./routes/HangOutRoute.js')
+const Photos = require('./routes/Photos.js')
 
 app.use('/api/v1/', HangOutRoute)
+app.use('/api/v1/', Photos)
 
 // test endpoint
 app.get('/test', async (req,res) => {
