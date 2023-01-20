@@ -9,13 +9,12 @@ import {
 
 import './index.css';
 import HomePage from './HomePage.js';
-import TestingSlider from './TestingSlider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<TestingSlider />} />
+            <Route path='/' element={<HomePage />} />
         </Routes>
     </BrowserRouter>
 );

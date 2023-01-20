@@ -14,7 +14,7 @@ const SubmitHangout = async (req, res) => {
             req.body['whatDo'] == null ||
             req.body['inviteAnyone'] == null ||
             req.body['specificTime'] == null ||
-            req.body['whyHangout'] == null ||
+            // req.body['whyHangout'] == null ||
             req.body['finalThoughts'] == null
         )
         {
@@ -25,7 +25,7 @@ const SubmitHangout = async (req, res) => {
         const hangOutId = crypto.randomBytes(16).toString("hex")
 
         let query = await pool.query(
-            "INSERT INTO HangOutSessions VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+            "INSERT INTO HangOutSessions VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
             [
                 hangOutId,
                 req.body['name'].trim(),
@@ -34,7 +34,7 @@ const SubmitHangout = async (req, res) => {
                 req.body['whatDo'].trim(),
                 req.body['inviteAnyone'].trim(),
                 req.body['specificTime'].trim(),
-                req.body['whyHangout'].trim(),
+                // req.body['whyHangout'].trim(),
                 req.body['finalThoughts'].trim()
 
 

@@ -1,69 +1,113 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './styles/infinite-slider.css';
+import './styles/infinite-slider-panel.css';
 import InfiniteSliderPanel from './InfiniteSliderPanel.js'
 import {v4 as uuidV4} from 'uuid'
+import TestPanel from './TestPanel';
+import axios from 'axios'
 
 export default function InfiniteSlider() {
 
-    const [panels, setPanels] = useState()
-    const [panelIDs, setPanelIDs] = useState()
+    const [panels, setPanels] = useState([])
+    // const [panelIDs, setPanelIDs] = useState([])
+    const panelsRef = useRef()
+    let panelIds = []
+
+    // panelsRef.current = panels
+    let currentPanelNumber = 1
     useEffect(() => {
+        async function asyncUseEffect(){
+            // always have 6 photos rendered at any given moment
+            await addNewPanel(0)
+            await addNewPanel(1)
+            await addNewPanel(2)
+            await addNewPanel(3)
+            currentPanelNumber = 4
+            panelIds = [0,1,2,3]
+            setInterval(() => {
+                // console.log('->', (document.getElementById('infinite-sliding-individual-panel-' + (currentPanelNumber - 1))).getBoundingClientRect().right)
+                // console.log('-->', window.innerWidth)
+                console.log(panelIds)
+                if(document.getElementById('infinite-sliding-individual-panel-' + panelIds[0]).getBoundingClientRect().right < 0 ){
+                    addNewPanel(currentPanelNumber)
+                    removeFrontPanel(panelIds[0])
+                    panelIds.shift()
+                    panelIds.push(currentPanelNumber)
+                    currentPanelNumber = currentPanelNumber + 1
+                }
+                else if((document.getElementById('infinite-sliding-individual-panel-' + (currentPanelNumber - 1))).getBoundingClientRect().right < window.innerWidth + 100){
+                    addNewPanel(currentPanelNumber)
+                    currentPanelNumber = currentPanelNumber + 1
+                }
+            }, 1000)
+        }
+        asyncUseEffect()
+        
+        // setTimeout(() => {
+        //     addNewPanel(0)
+        //     addNewPanel(1)
+        //     addNewPanel(2)
+        // }, 500)
+        
 
-        // WHERE I LEFT OFF: I want to make 3 outer panel-containers that never get deleted from the dom.  
-        // This way the panels never shift. Wait I just realized this doesnt make sense
-        const panel1ID = uuidV4()
-        const panel2ID = uuidV4()
-        const panel3ID = uuidV4()
-
-        setPanelIDs([panel1ID, panel2ID, panel3ID])
-        setPanels([
-            <InfiniteSliderPanel key={panel1ID} panelID={panel1ID} number={1} />, 
-            <InfiniteSliderPanel key={panel2ID} panelID={panel2ID} number={2} />, 
-            <InfiniteSliderPanel key={panel3ID} panelID={panel3ID} number={3} />, 
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={4} />,
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={5} />,
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={6} />,
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={7} />,
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={8} />,
-            <InfiniteSliderPanel key={uuidV4()} panelID={uuidV4()} number={9} />
-        ])
-        document.getElementById('infinite-slider-panels-container').style.transform = 'translateX(-999999px)'
+        // setInterval(() => {
+        //     // if(document.getElementById('infinite-sliding-individual-panel-' + panelIDs[0]).getBoundingClientRect().right < 300){
+        //     //     suicidePanelAndBirthNewPanel()
+        //     // }
+        //     addPanel()
+        // }, 1000)
     }, []) 
 
-    function removePanel() {
-        document.getElementById('infinite-sliding-individual-panel-' + panelIDs[0]).remove()
-        // let panelsTempArray = panels
-        // panels[0].remove()
-        // panelsTempArray.shift()
-
-        // console.log(panelsTempArray)
-
-        // setPanels(panelsTempArray)
-        
+    async function removeFrontPanel(removePanelNumber) {
+        console.log('**', removePanelNumber)
+        document.getElementById('infinite-sliding-individual-panel-image-' + removePanelNumber).remove()
+        document.getElementById('infinite-sliding-individual-panel-' + removePanelNumber).remove()
     }
 
-    function addPanel() {
-        console.log(1)
-        const newPanelID = uuidV4()
+    async function addNewPanel(newPanelNumber) {
+        const currentSessionStorage = sessionStorage.getItem('photoList')
+            
+        let randomPhotoData = await axios.get(process.env.REACT_APP_ENVIRONMENT + '/api/v1/random-photo-data')
+        console.log(randomPhotoData)
+        let photoSrc = process.env.REACT_APP_ENVIRONMENT + '/api/v1/photo/' + randomPhotoData.data['photoname']
+        const photoDescription = randomPhotoData.data['description']
+        const photoDate = randomPhotoData.data['date']
 
-        let tempPanelIDsArray = panelIDs.slice()
-        tempPanelIDsArray.push(newPanelID)
-        setPanelIDs(tempPanelIDsArray)
+        const newPanelDiv = document.createElement('div')
+        newPanelDiv.id = 'infinite-sliding-individual-panel-' + newPanelNumber
+        newPanelDiv.className = 'infinite-sliding-individual-panel'
 
-        let tempPanelsArray = panels.slice()
-        tempPanelsArray.push(<InfiniteSliderPanel key={newPanelID} panelID={newPanelID} />)
-        setPanels(tempPanelsArray)
+        const newPanelImg = document.createElement('img')
+        newPanelImg.id = 'infinite-sliding-individual-panel-image-' + newPanelNumber
+        newPanelImg.className = 'infinite-sliding-individual-panel-image'
+        newPanelImg.src = photoSrc
+
+        newPanelDiv.appendChild(newPanelImg)
+        document.getElementById('infinite-slider-container').appendChild(newPanelDiv)
+
+        if(newPanelNumber == 0){
+            newPanelDiv.style.left = '0'
+        }
+        else{
+            console.log(newPanelNumber)
+            const previousPanelElement = document.getElementById('infinite-sliding-individual-panel-' + (newPanelNumber - 1))
+            console.log(previousPanelElement.getBoundingClientRect().right)
+            newPanelDiv.style.left = (Math.floor(previousPanelElement.getBoundingClientRect().right) - 20) + 'px'
+        }
+        
+
+
+        setTimeout(() => {
+            newPanelDiv.style.transform = 'translateX(-10000px)'
+        }, 50)
     }
 
     return (
         <>
-            {/* <button onClick={removePanel} className='hahaha'>remove</button>
-            <button onClick={addPanel} className='cough'>add</button> */}
-
-            <div className="infinite-slider-container">
-                <div id='infinite-slider-panels-container' className='infinite-slider-panels-container'>
-                    {panels}
-                </div>
+            <div id='infinite-slider-container' className="infinite-slider-container">
+                {/* {panels.map(panel => (
+                    panel
+                ))} */}
             </div>
         </>
     )

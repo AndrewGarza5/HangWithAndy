@@ -2,10 +2,12 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    GetRandomPhoto
+    GetPhoto, 
+    GetRandomPhotoData
 } = require('../controllers/Photos.js')
 
 //without artis
-router.route('/random-photo').get(GetRandomPhoto)
+router.route('/random-photo-data').get(GetRandomPhotoData)
+router.route('/photo/:photoname').get(GetPhoto)
 
 module.exports = router 
