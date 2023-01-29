@@ -13,34 +13,30 @@
 
 .hang-out-form-back-button{
     width: 240px;
-    height: 46px;
+    height: 45px;
 
     background-color: #de9d0675;
     border: 1px solid rgba(255, 255, 255, .75);
 
     color: white;
-    font-family: 'HarlowSolid';
-    font-size: 25px;
+    font-family: 'Bauhaus93';
+    font-size: 22px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    transition: 200ms ease;
+    transition: 750ms ease;
 
     cursor: pointer;
 }
 
 .hang-out-form-lower-box{
     width: 240px;
-    height: 299px;
+    height: 270px;
 
     border: 1px solid rgba(255, 255, 255, .75);
-
-    color: white;
-    font-family: 'Bauhaus93';
-    font-size: 20px;
 
     display: flex;
     flex-direction: column;
@@ -57,7 +53,7 @@
     background-color: var(--panel-color);
 
     overflow: auto;
-    transition: 1500ms ease;
+    transition: 250ms ease;
     transform: translateY(0px);
 }
 
@@ -84,7 +80,7 @@
 
 .hang-out-form-selected-date-container{
     width: 100%;
-    height: 35px;
+    height: 45px;
     background-color: var(--panel-color);
 
     /* padding-top: 5px; */
@@ -94,7 +90,9 @@
     justify-content: center;
     align-items: center;
 
-    font-family: 'OfficialBook';
+    color: white;
+    font-size: 18px;
+    font-family: 'TOMMY bold';
 
     border-bottom: 1px solid rgba(255, 255, 255, .75);
 }
@@ -118,8 +116,9 @@
     height: auto;
 
     color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: 'TOMMY medium';
 
-    font-size: 20px;
     line-height: 18px;
     text-align: left;
     padding-left: 12px;
@@ -132,9 +131,9 @@
     height: auto;
 
     color: white;
+    font-size: 14px;
+    font-family: 'TOMMY regular';
 
-    font-size: 18px;
-    font-family: 'OfficialBook';
     line-height: 18px;
     text-align: left;
     padding-left: 12px;
@@ -154,9 +153,9 @@
     height: auto;
 
     color: white;
-
-    font-size: 18px;
-    font-family: 'OfficialBook';
+    font-size: 14px;
+    font-family: 'TOMMY regular';
+    
     line-height: 18px;
     text-align: left;
     padding-left: 12px;
@@ -179,8 +178,9 @@
 
     color: white;
 
-    font-size: 18px;
-    font-family: 'OfficialBook';
+    font-size: 16px;
+    font-family: 'TOMMY regular';
+
     text-align: left;
     padding-left: 12px;
     padding-right: 12px;
@@ -199,19 +199,28 @@
 .down-arrow{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 5px;
 
     width: auto;
     height: auto;
 
-    background-color: rgba(255, 255, 255, 0);
+    /* background-color: rgb(90, 32, 32); */
     z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    transition: 5000ms;
+    opacity: 1;
 }
 
 .hang-out-form-submit-button{
 
     width: 100%;
-    height:46px;
+    height: 40px;
 
     background-color: #de9d0675;
     border: 0px;
@@ -219,8 +228,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, .75);
 
     color: white;
-    font-family: 'HarlowSolid';
-    font-size: 25px;
+    font-family: 'Bauhaus93';
+    font-size: 22px;
 
     display: flex;
     justify-content: center;

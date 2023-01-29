@@ -13,17 +13,10 @@ import i8 from '../images/8.jpg'
 import i9 from '../images/9.jpg'
 import { a } from 'react-spring';
 
-export default function TestPanel(  ) {
-    console.log(1928)
-    useEffect(() => {
-    }, [])
-
+export default function TestPanel() {
 
     return (
         <>
-            <div className='test-panel'>
-                
-            </div> 
             
         </>
     );

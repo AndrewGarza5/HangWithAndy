@@ -2,14 +2,16 @@
   .down-arrow-container {
     position: relative;
     width: 29px;
-    height: 57px;
+    height: 14px;
   
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(255, 0, 0, 0);
-    transition: 5000ms;
-    opacity: 1;
+    align-items: center;
+    /* background-color: rgb(126, 61, 61); */
+    
+
+    padding-bottom: 30px;
   }
   
   .down-arrow-chevron {
@@ -86,4 +88,13 @@
     to {
       opacity: 1;
     }
+  }
+
+  .scroll-text{
+    color: white;
+    font-size: 10px;
+    font-family: 'TOMMY thin';
+
+    margin-top: 10px;
+
   }

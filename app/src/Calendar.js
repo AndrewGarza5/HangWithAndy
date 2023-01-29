@@ -35,9 +35,11 @@ const Calendar = ({ onCalendarDayClick }) => {
       setCurrentMonth(subWeeks(currentMonth, 1));
       setCurrentWeek(getWeek(subWeeks(currentMonth, 1)));
 
-      document.getElementById('prev-icon').style.color = '#eca90d'
+      document.getElementById('prev-icon-arrow').style.borderColor = '#eca90d'
+      document.getElementById('prev-icon-arrow-line').style.backgroundColor = '#eca90d'
       setTimeout(() => {
-        document.getElementById('prev-icon').style.color = 'white'
+        document.getElementById('prev-icon-arrow').style.borderColor = 'white'
+        document.getElementById('prev-icon-arrow-line').style.backgroundColor = 'white'
       }, 250)
     }
     if (btnType === "next") {
@@ -45,9 +47,11 @@ const Calendar = ({ onCalendarDayClick }) => {
       setCurrentMonth(addWeeks(currentMonth, 1));
       setCurrentWeek(getWeek(addWeeks(currentMonth, 1)));
 
-      document.getElementById('next-icon').style.color = '#eca90d'
+      document.getElementById('next-icon-arrow').style.borderColor = '#eca90d'
+      document.getElementById('next-icon-arrow-line').style.backgroundColor = '#eca90d'
       setTimeout(() => {
-        document.getElementById('next-icon').style.color = 'white'
+        document.getElementById('next-icon-arrow').style.borderColor = 'white'
+        document.getElementById('next-icon-arrow-line').style.backgroundColor = 'white'
       }, 250)
     }
   };
@@ -170,10 +174,12 @@ const Calendar = ({ onCalendarDayClick }) => {
     return (
       <div className="calendar-arrows-container">
         <div id='prev-icon' className="calendar-arrows-single-arrow" onClick={() => changeWeekHandle("prev")}>
-          &#x2190; 
+          <div id='prev-icon-arrow' className="arrow-left"></div>
+          <div id='prev-icon-arrow-line' className="arrow-left-line"></div>
         </div>
         <div id='next-icon' className="calendar-arrows-single-arrow" onClick={() => changeWeekHandle("next")}>
-          &#x2192;
+          <div id='next-icon-arrow-line' className="arrow-right-line"></div>
+          <div id='next-icon-arrow' className="arrow-right"></div>
         </div>
         {/* <div className="col col-start">
           <div id='prev-icon' className="icon" onClick={() => changeWeekHandle("prev")}>

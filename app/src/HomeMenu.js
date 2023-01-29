@@ -22,7 +22,10 @@ export default function HomeMenu( { clickViewMore, onCalendarDayClick } ) {
 
     
   // }
-
+  
+  function hideMenuClick(){
+    
+  }
   
 
   return (
@@ -32,19 +35,16 @@ export default function HomeMenu( { clickViewMore, onCalendarDayClick } ) {
         </div>
 
         <div className='home-page-calendar-section-container'>
-        <div className='home-page-calendar-header'>
-            Pick the day
-        </div>
-        <div className='home-page-calendar-container'>
-            <Calendar onCalendarDayClick={onCalendarDayClick}/>
-        </div>
+          <div className='home-page-calendar-header'>
+              Pick a hangout day
+          </div>
+          <div className='home-page-calendar-container'>
+              <Calendar onCalendarDayClick={onCalendarDayClick}/>
+          </div>
         </div>
 
-        <div id='view-more-button' className='view-more-button'>
-            Friends
-        </div>
-        <div id='view-more-button' className='view-more-button'>
-            Pictures
+        <div id='view-more-button' className='view-more-button' onClick={hideMenuClick}>
+            Hide menu
         </div>
     </div>
   );

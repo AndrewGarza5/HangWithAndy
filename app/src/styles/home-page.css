@@ -11,7 +11,7 @@
   width: 100%;
   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.244);
+  /* background-color: rgba(0, 0, 0, 0.244); */
 
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: 5px solid white;
+  border: 3px solid white;
 
   z-index: 5;
 }

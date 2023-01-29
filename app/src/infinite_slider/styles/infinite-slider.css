@@ -12,6 +12,8 @@
 
 .infinite-slider-container{
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 
@@ -19,6 +21,9 @@
 
     overflow: hidden;
 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .infinite-slider-panels-container{
@@ -32,4 +37,14 @@
     background-color: rgb(19, 18, 18);
     
     transition: ease 11000s;
+}
+
+.end-of-photos-text{
+    color: white;
+    font-size: 20px;
+    font-family: 'TOMMY regular';
+
+    text-align: center;
+    max-width: 70%;
+    margin-top: 50px;
 }

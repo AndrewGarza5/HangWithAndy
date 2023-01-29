@@ -41,8 +41,8 @@ export default function QAHangOutForm( { hangOutSubmittedRemoveQA, showInvalidFo
         // document.getElementById('hang-out-form-contents-container').getBoundingClientRect().top = 300
         console.log(topCoordinate)
         if((startingValue - topCoordinate) > 300 || (startingValue - topCoordinate) < -300 || topCoordinate == null || topCoordinate == undefined){
-            if(document.getElementById('down-arrow-container')){
-                document.getElementById('down-arrow-container').style.opacity = 0
+            if(document.getElementById('down-arrow')){
+                document.getElementById('down-arrow').style.opacity = 0
                 setTimeout(() => {
                     removeDownArrow()
                 }, 5000)
@@ -196,12 +196,12 @@ export default function QAHangOutForm( { hangOutSubmittedRemoveQA, showInvalidFo
                 <textarea placeholder='Enter answer... (optional)' onInput={resizeTextboxOnInput} maxLength='2000' className='hang-out-form-answer-container'></textarea>
             </div> */}
 
-            <div className='hang-out-form-question-answer-container'>
+            {/* <div className='hang-out-form-question-answer-container'>
                 <div className='hang-out-form-question-container'>
                     Why do you want to hang out?
                 </div>
                 <textarea id='hang-out-form-why-hang-out' placeholder='Enter answer... (optional)' onInput={resizeTextboxOnInput} maxLength='2000' className='hang-out-form-answer-container'></textarea>
-            </div>
+            </div> */}
 
             <div className='hang-out-form-question-answer-container'>
                 <div className='hang-out-form-question-container'>

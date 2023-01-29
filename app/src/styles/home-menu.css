@@ -1,7 +1,7 @@
 .home-menu-panel-container{
   width: auto;
   height: auto;
-  max-height: 385px;
+  max-height: 332px;
 
 
   display: flex;
@@ -23,7 +23,7 @@
   border: 1px solid rgba(255, 255, 255, .75);
 
   font-family: 'Bauhaus93';
-  font-size: 20px;
+  font-size: 22px;
   color: 
   #ffffff;
   
@@ -34,7 +34,7 @@
 
 .home-page-calendar-section-container{
   width: 240px;
-  height: 200px;
+  height: 175px;
 
   background-color: var(--panel-color);
 
@@ -44,17 +44,18 @@
 
 .home-page-calendar-header{
   width: 100%;
-  height: 50px;
+  height: 45px;
 
   border-bottom: 1px solid rgba(255, 255, 255, .75);
 
   color: white;
   font-family: 'Bauhaus93';
-  font-size: 25px;
+  font-size: 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   cursor: pointer;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -67,19 +68,19 @@
 
 .home-page-calendar-container{
   width: 100%;
-  height: 150px;
+  height: 120px;
   
 }
 
 .view-more-button{
   width: 240px;
-  height: 40px;
+  height: 45px;
 
   background-color: var(--panel-color);
   border: 1px solid rgba(255, 255, 255, .75);
 
   font-family: 'Bauhaus93';
-  font-size: 25px;
+  font-size: 22px;
   color: white;
   
   display: flex;

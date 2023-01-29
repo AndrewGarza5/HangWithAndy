@@ -13,12 +13,12 @@ export default function HomePage() {
                                                       clickViewMore={clickViewMore} 
                                                       onCalendarDayClick={onCalendarDayClick}  
                                                     />)
-  const [nextPanel, setNextPanel] = useState(<ViewMorePanel clickBackButton={clickBackButton} />)
+  const [nextPanel, setNextPanel] = useState()
   const [invalidFormWarning, setInvalidFormWarning] = useState(null)
 
   const fadeIn = useSpring({
     from: {opacity: 0, border: '0px solid white', height: '0px', paddingTop: '0', paddingBottom: '0'}, 
-    to: {opacity: 1, border: '1px solid rgba(255,255,255,.75)', paddingTop: '5px', paddingBottom: '5px', height: '397px'},
+    to: {opacity: 1, border: '1px solid rgba(255,255,255,.75)', paddingTop: '5px', paddingBottom: '5px', height: '332px'},
     config: {duration: 2000, easing: easings.easeInOutCubic},
     delay: 1000
   })
@@ -38,6 +38,7 @@ export default function HomePage() {
     }, 200)
   }
 
+  // DEPRECATED: No longer being used
   function clickViewMore() {
     setNextPanel(<ViewMorePanel clickBackButton={clickBackButton} />)
     

@@ -48,3 +48,33 @@ code {
   font-family: 'Demode';
   src: url('./fonts/Demode.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'CandL';
+  src: url('./fonts/Champagne&Limousines.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CandL_Bold';
+  src: url('./fonts/Champagne&LimousinesBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TOMMY thin';
+  src: url('./fonts/TOMMY_thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TOMMY regular';
+  src: url('./fonts/TOMMY_regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TOMMY medium';
+  src: url('./fonts/TOMMY_medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TOMMY bold';
+  src: url('./fonts/TOMMY_bold.otf') format('opentype');
+}

@@ -13,13 +13,12 @@ import i8 from '../images/8.jpg'
 import i9 from '../images/9.jpg'
 import { a } from 'react-spring';
 
-    export default function InfiniteSliderPanel( { panelID, suicidePanelAndBirthNewPanel, panelsRef } ) {
+    export default function InfiniteSliderPanel( { panelID } ) {
     const [panels, setPanels] = useState()
     const [photoToUse, setPhotoToUse] = useState()
     const [date, setDate] = useState()
     const [description, setDescription] = useState()
     let interval
-    console.log(panelID)
 
     //const config = { attributes: true };
     // const styleChangeCallback = (mutationList, observer) => {
@@ -67,29 +66,29 @@ import { a } from 'react-spring';
             console.log(sessionStorage.getItem('photoList'))
 
             const thisPanelElement = document.getElementById('infinite-sliding-individual-panel-' + panelID)
-            if(panelID == 1){
-                // setInterval(() => {
-                //     // console.log(document.getElementById('infinite-sliding-individual-panel-' + (panelID)).getBoundingClientRect().left)
+            // if(panelID == 1){
+            //     // setInterval(() => {
+            //     //     // console.log(document.getElementById('infinite-sliding-individual-panel-' + (panelID)).getBoundingClientRect().left)
                     
-                // }, 1000)
-                thisPanelElement.style.transition = '150000ms'
-                thisPanelElement.style.transform = 'translateX(-10000px)'
-            }
-            else{
-                const previousPanelElement = document.getElementById('infinite-sliding-individual-panel-' + (panelID - 1))
-                const previousLeft = previousPanelElement.getBoundingClientRect().left
-                const previousWidth = previousPanelElement.offsetWidth
+            //     // }, 1000)
+            //     thisPanelElement.style.transition = '150000ms'
+            //     thisPanelElement.style.transform = 'translateX(-10000px)'
+            // }
+            // else{
+            //     const previousPanelElement = document.getElementById('infinite-sliding-individual-panel-' + (panelID - 1))
+            //     const previousLeft = previousPanelElement.getBoundingClientRect().left
+            //     const previousWidth = previousPanelElement.offsetWidth
             
-                // thisPanelElement.style.transform = 'translateX(' + (previousLeft + previousWidth + 3) + 'px' + ')'
-                thisPanelElement.style.left = (previousLeft + previousWidth + 1) + 'px'
+            //     // thisPanelElement.style.transform = 'translateX(' + (previousLeft + previousWidth + 3) + 'px' + ')'
+            //     thisPanelElement.style.left = (previousLeft + previousWidth + 1) + 'px'
                 
-                console.log((previousLeft + previousWidth + 1) + 'px')
+            //     console.log((previousLeft + previousWidth + 1) + 'px')
 
-                setTimeout(() => {
-                    thisPanelElement.style.transition = '150000ms'
-                    thisPanelElement.style.transform = 'translateX(-10000px)'
-                }, 50)
-            }
+            //     setTimeout(() => {
+            //         thisPanelElement.style.transition = '150000ms'
+            //         thisPanelElement.style.transform = 'translateX(-10000px)'
+            //     }, 50)
+            // }
 
             // interval = setInterval(() => {
             //     if (document.getElementById('infinite-sliding-individual-panel-' + panelID).getBoundingClientRect().right < 300){
@@ -104,7 +103,13 @@ import { a } from 'react-spring';
     return (
         <>
         <div id={'infinite-sliding-individual-panel-' + panelID} className='infinite-sliding-individual-panel'>
+            <div className='infinite-sliding-panel-date'>
+                2.10.20
+            </div>
             <img src={photoToUse} id={'infinite-sliding-individual-panel-image-' + panelID} className='infinite-sliding-individual-panel-image'></img>
+            <div className='infinite-sliding-panel-description'>
+                poopy butt hole
+            </div>
         </div>
         </>
     );

@@ -16,7 +16,7 @@ export default function HangOutForm( { clickBackButton, dayStr, showInvalidFormW
                                                                           />
                                                                         )
     const [confirmedHangOutComponent, setConfirmedHangOutComponent] = useState(null)
-    const [downArrowState, setDownArrowState] = useState(<DownArrow />)
+    const [downArrowState, setDownArrowState] = useState(<DownArrow onDownArrowClick={onDownArrowClick}/>)
 
 
   function removeDownArrow(){
@@ -28,6 +28,13 @@ export default function HangOutForm( { clickBackButton, dayStr, showInvalidFormW
     setConfirmedHangOutComponent(<ConfirmedHangOut />)
   }
 
+  function onDownArrowClick(){
+    document.getElementById('hang-out-form-slider').scrollBy({
+      top: 200,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
   return (
     <>
@@ -36,7 +43,7 @@ export default function HangOutForm( { clickBackButton, dayStr, showInvalidFormW
                 Back!
             </div>
             <div className='hang-out-form-lower-box'>
-                <div id='down-arrow' className='down-arrow'>
+                <div id='down-arrow' className='down-arrow' onClick={onDownArrowClick}>
                     {downArrowState}
                 </div>
                 <div className='hang-out-form-selected-date-container'>
