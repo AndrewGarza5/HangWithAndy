@@ -5,10 +5,9 @@ import mePOGGING from '../images/mePOGGING.png'
 export default function ConfirmedHangOut() {
 
   useEffect(() => {
-    console.log(81)
     setTimeout(() => {
-      document.getElementById('confirmed-hang-out-picture').style.transform = 'rotate(0deg) scale(1)'
-      document.getElementById('confirmed-hang-out-picture').style.opacity = '1'
+      // document.getElementById('confirmed-hang-out-picture').style.transform = 'rotate(0deg) scale(1)'
+      // document.getElementById('confirmed-hang-out-picture').style.opacity = '1'
 
 
 
@@ -26,7 +25,7 @@ export default function ConfirmedHangOut() {
     <>
     <div className='confirmed-hang-out-container'>
       <div className='confirmed-hang-out-text'>
-        I'll be in contact.
+        epic.<br></br> i will be in contact.
       </div>
       <img id='confirmed-hang-out-picture' className='confirmed-hang-out-picture' src={mePOGGING} />
       {/* <div className='confirmed-hang-out-fancy-text'>

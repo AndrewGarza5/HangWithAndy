@@ -29,7 +29,8 @@
     width: auto;
     height: 100%;
 
-    opacity: .5;
+    transition: 2000ms;
+    z-index: 101;
 }
 
 .panel-seperator{
@@ -50,18 +51,22 @@
     justify-content: center;
     align-items: center;
 
-    font-size: 16px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 1);
     font-family: 'TOMMY medium';
 
     padding-top: 15px;
 
-    z-index: 100;
+    z-index: 102;
     text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+
+     opacity: 1;
+     transition: 0ms;
+
 }
 
 .infinite-sliding-panel-description{
@@ -74,15 +79,19 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 1);
     font-family: 'TOMMY medium';
 
     padding-bottom: 15px;
 
+    z-index: 102;
     text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+
+     opacity: 1;
+     transition: 0ms;
 }

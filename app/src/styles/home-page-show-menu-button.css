@@ -1,0 +1,30 @@
+.home-page-show-menu-container{
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.home-page-show-menu-button{
+    width: 160px;
+    height: 50 px;
+
+    border: 1px solid white;
+    /* border-top: 0px; */
+
+    background-color: rgba(3, 20, 49, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: 'Bauhaus93';
+    font-size: 22px;
+    color: white;
+}

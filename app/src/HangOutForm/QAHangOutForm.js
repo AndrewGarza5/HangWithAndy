@@ -114,11 +114,11 @@ export default function QAHangOutForm( { hangOutSubmittedRemoveQA, showInvalidFo
             whatDo: whatDoObj.value,
             inviteAnyone: document.getElementById('hang-out-form-invite-anyone').value,
             specificTime: document.getElementById('hang-out-form-specific-time').value,
-            whyHangout: document.getElementById('hang-out-form-why-hang-out').value,
+            //whyHangout: document.getElementById('hang-out-form-why-hang-out').value,
             finalThoughts: document.getElementById('hang-out-form-final-thoughts').value
         }
         try{
-            const hangOutPostResponse = await axios.post('https://www.hangwithandy.com:5000/api/v1/hang-out', hangOutPostBody)
+            const hangOutPostResponse = await axios.post(process.env.REACT_APP_ENVIRONMENT + '/api/v1/hang-out', hangOutPostBody)
             console.log(hangOutPostResponse)
             if(hangOutPostResponse.status == 200){
                 document.getElementById('hang-out-form-slider').style.overflow = 'hidden'

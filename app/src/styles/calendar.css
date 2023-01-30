@@ -35,12 +35,6 @@
 /* GENERAL */
 
 
-/* DOES THIS AFFECT REST OF APP? */
-/* YES BUT THAT IS OKAY. IT JUST MAKES BORDERS GO INWARDS */
-* {
-  box-sizing: border-box;
-}
-
 /* GRID */
 
 .row {

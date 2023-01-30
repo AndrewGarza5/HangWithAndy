@@ -7,7 +7,7 @@ import TestPanel from './TestPanel';
 import axios from 'axios'
 import EndOfPhotos from './EndOfPhotos';
 
-export default function InfiniteSlider() {
+export default function InfiniteSlider( {photoOpacity} ) {
 
     const [endOfPhotos, setEndOfPhotos] = useState()
     let panelIds = []
@@ -66,6 +66,7 @@ export default function InfiniteSlider() {
         newPanelImg.id = 'infinite-sliding-individual-panel-image-' + newPanelNumber
         newPanelImg.className = 'infinite-sliding-individual-panel-image'
         newPanelImg.src = photoSrc
+        newPanelImg.style.opacity = photoOpacity.current
 
         const newDescriptionDiv = document.createElement('div')
         newDescriptionDiv.className = 'infinite-sliding-panel-description'
@@ -83,7 +84,6 @@ export default function InfiniteSlider() {
             const previousPanelElement = document.getElementById('infinite-sliding-individual-panel-' + (newPanelNumber - 1))
             const setLeft = Math.floor(previousPanelElement.getBoundingClientRect().right) - 20
             newPanelDiv.style.left = setLeft + 'px'
-            console.log(previousPanelElement, setLeft)
         }
 
         setTimeout(() => {
@@ -93,13 +93,12 @@ export default function InfiniteSlider() {
     }
 
     async function setFirstSixPhotos(photoNumber){
+        console.log(10927)
         if(photoNumber >= 6){
-            console.log(9191)
             return
         }
         let photoData = panelList[0]
         panelList.shift()
-        console.log(photoNumber)
 
         let photoSrc = process.env.REACT_APP_ENVIRONMENT + '/api/v1/photo/' + photoData['photoname']
         const photoDescription = photoData['description']
@@ -108,7 +107,6 @@ export default function InfiniteSlider() {
         const newPanelDiv = document.createElement('div')
         newPanelDiv.id = 'infinite-sliding-individual-panel-' + photoNumber
         newPanelDiv.className = 'infinite-sliding-individual-panel'
-        // newPanelDiv.style.left = window.innerWidth + 'px'
 
         const newDateDiv = document.createElement('div')
         newDateDiv.className = 'infinite-sliding-panel-date'
@@ -118,6 +116,7 @@ export default function InfiniteSlider() {
         newPanelImg.id = 'infinite-sliding-individual-panel-image-' + photoNumber
         newPanelImg.className = 'infinite-sliding-individual-panel-image'
         newPanelImg.src = photoSrc
+        newPanelImg.style.opacity = photoOpacity.current
 
         const newDescriptionDiv = document.createElement('div')
         newDescriptionDiv.className = 'infinite-sliding-panel-description'
@@ -132,7 +131,6 @@ export default function InfiniteSlider() {
 
         if(photoNumber == 0){
             newPanelDiv.style.left = '0'
-            console.log('here')
             newPanelDiv.style.visibility = 'visible'
 
             setTimeout(() => {

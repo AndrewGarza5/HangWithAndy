@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './styles/home-menu.css';
 import Calendar from './Calendar';
 
-export default function HomeMenu( { clickViewMore, onCalendarDayClick } ) {
+export default function HomeMenu( { hideMenuClick, onCalendarDayClick } ) {
 
   useEffect(() => {
     // document.getElementById('view-more-button').addEventListener('mousedown', viewMorePanelDown)
@@ -21,12 +21,7 @@ export default function HomeMenu( { clickViewMore, onCalendarDayClick } ) {
   //   }, 500)
 
     
-  // }
-  
-  function hideMenuClick(){
-    
-  }
-  
+  // }  
 
   return (
     <div id='home-menu-panel-container' className='home-menu-panel-container'>
